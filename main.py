@@ -211,5 +211,17 @@ from tkinter import messagebox
 # print("do it chenging or not")
 # print("so now lets tes agian it working or not ")
 school=[ 1, 2,3, 4]
-print(school)
- 
+for i in school:
+  print(i)
+  if i == 3:
+    break
+adj = ["red", "big", "tasty"]
+fruits = ["apple", "banana", "cherry"]
+
+for x in adj:
+  if x == "big":
+    break
+  for y in fruits:
+    print(x, y)
+
+  
