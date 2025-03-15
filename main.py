@@ -223,5 +223,14 @@ for x in adj:
     break
   for y in fruits:
     print(x, y)
-
+    
+a = "danish"
+for i in range(1):
+  print(a + "hello")
   
+school= ["ssh", 3, 4, "bkvm"]
+print(school[-1])
+if "ssh" in school:
+  print("yes ther is ")
+else:
+  print("no ther is not")
