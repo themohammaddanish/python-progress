@@ -202,12 +202,14 @@ from tkinter import messagebox
   
 # a = int(input("enter the first number"))
 # b = int(input("enter the second number"))
-a =1
-b =1
-def calculation( a=5, b=6 ):
-  c=a+b
-  print(c)
-calculation(a , b)
-print("do it chenging or not")
-print("so now lets tes agian it working or not ")
+# a =1
+# b =1
+# def calculation( a=5, b=6 ):
+#   c=a+b
+#   print(c)
+# calculation(a , b)
+# print("do it chenging or not")
+# print("so now lets tes agian it working or not ")
+school=[ 1, 2,3, 4]
+print(school)
  
