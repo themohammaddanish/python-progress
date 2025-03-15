@@ -228,9 +228,14 @@ a = "danish"
 for i in range(1):
   print(a + "hello")
   
-school= ["ssh", 3, 4, "bkvm"]
+school= ["ssh", 3, 4, "bkvm" ,5 ,3,1]
 print(school[-1])
 if "ssh" in school:
   print("yes ther is ")
 else:
   print("no ther is not")
+
+print(school[0:7:2])
+
+new_list=[i for i in range(12) if i%3==0]
+print(new_list)
