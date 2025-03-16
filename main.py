@@ -240,19 +240,23 @@
 # new_list=[i for i in range(12) if i%3==0]
 # print(new_list)
 '''starting list method'''
-list1=[2,1,4,6,5,9,10]
-list1.sort()
-list1.sort(reverse=True)
-list1.append(3)
-list1.reverse()
-print(list1)
-print(list1.count(2))
-list2=list1.copy()
-list2[2]=10
-print(list2)
-list1.insert(3, "danish")
-print(list1)
-list1.extend(list2)
-print(list1)
+# list1=[2,1,4,6,5,9,10]
+# list1.sort()
+# list1.sort(reverse=True)
+# list1.append(3)
+# list1.reverse()
+# print(list1)
+# print(list1.count(2))
+# list2=list1.copy()
+# list2[2]=10
+# print(list2)
+# list1.insert(3, "danish")
+# print(list1)
+# list1.extend(list2)
+# print(list1)
 '''learning tupple now'''
-
+a = (2,3,4,4,4,)
+print(type(a), a)
+b = a
+# b[0]=19  tupple can not be modified
+print(b)
