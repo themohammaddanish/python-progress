@@ -246,3 +246,7 @@ list1.sort(reverse=True)
 list1.append(3)
 list1.reverse()
 print(list1)
+print(list1.count(2))
+list2=list1.copy()
+list2[2]=10
+print(list2)
