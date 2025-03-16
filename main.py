@@ -254,3 +254,5 @@ list1.insert(3, "danish")
 print(list1)
 list1.extend(list2)
 print(list1)
+'''learning tupple now'''
+
