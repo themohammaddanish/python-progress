@@ -250,3 +250,7 @@ print(list1.count(2))
 list2=list1.copy()
 list2[2]=10
 print(list2)
+list1.insert(3, "danish")
+print(list1)
+list1.extend(list2)
+print(list1)
