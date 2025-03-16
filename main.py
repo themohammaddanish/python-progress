@@ -240,3 +240,9 @@
 # new_list=[i for i in range(12) if i%3==0]
 # print(new_list)
 '''starting list method'''
+list1=[2,1,4,6,5,9,10]
+list1.sort()
+list1.sort(reverse=True)
+list1.append(3)
+list1.reverse()
+print(list1)
