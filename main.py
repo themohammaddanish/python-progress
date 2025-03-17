@@ -260,3 +260,7 @@ print(type(a), a)
 b = a
 # b[0]=19  tupple can not be modified
 print(b)
+b = a[1:4]
+print(b)
+if 3 in a:
+  print("yes 3 is in tupple list variable of a")
