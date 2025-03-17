@@ -268,7 +268,9 @@ import time
 t = int(time.strftime("%H"))
 print(t)
 
-if (t>0 & t<12):
+if (t>0 and t<12):
   print("good mornign sir welcome")
-else:
-  print("good evening sir ")
+elif(t>12 and t<17):
+  print("good afternoon sir")
+else: 
+  print("gooad evening sir ")
