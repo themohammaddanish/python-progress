@@ -264,3 +264,11 @@ b = a[1:4]
 print(b)
 if 3 in a:
   print("yes 3 is in tupple list variable of a")
+import time
+t = int(time.strftime("%H"))
+print(t)
+
+if (t>0 & t<12):
+  print("good mornign sir welcome")
+else:
+  print("good evening sir ")
