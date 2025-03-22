@@ -284,10 +284,20 @@
 # letter = f"My name is {name} and im form {country}"
 # print(letter)
 '''learnign doc string'''
-def name(n):
-  '''This is doc string i have already written before learnig any thing but we can print it if its in any function but it should be right after the string '''
-  print(n**56)
+# def name(n):
+#   '''This is doc string i have already written before learnig any thing but we can print it if its in any function but it should be right after the string '''
+#   print(n**56)
   
-name(3)
-print(name.__doc__)
+# name(3)
+# print(name.__doc__)
 
+'''Recursion The best example is factorial'''
+
+def factorial(n):
+  if (n==0 or n==1):
+    return 1
+  else:
+    return n * factorial(n-1)
+n=int(input("inter the number for factorial value"))
+factorial(n)
+print(factorial)
