@@ -292,12 +292,12 @@
 # print(name.__doc__)
 
 '''Recursion The best example is factorial'''
+a=int(input("inter the number for factorial value"))
 
 def factorial(n):
   if (n==0 or n==1):
     return 1
   else:
     return n * factorial(n-1)
-a=int(input("inter the number for factorial value"))
-factorial(a)
+factorial(5)
 print(factorial)
