@@ -275,7 +275,12 @@
 # else: 
 #   print("gooad evening sir ")
 '''Leraning f string '''
-string= "my name is {} khan and im form {}"
-name= "danish"
-country="nepal"
-print(string.format(name,country))
+# string= "my name is {} khan and im form {}"
+# name= "danish"
+# country="nepal"
+# print(string.format(name,country))
+name = str(input("Enter Your name "))
+country = str(input("Enter Your name "))
+letter = f"My name is {name} and im form {country}"
+print(letter)
+
