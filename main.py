@@ -279,8 +279,15 @@
 # name= "danish"
 # country="nepal"
 # print(string.format(name,country))
-name = str(input("Enter Your name "))
-country = str(input("Enter Your name "))
-letter = f"My name is {name} and im form {country}"
-print(letter)
+# name = str(input("Enter Your name "))
+# country = str(input("Enter Your name "))
+# letter = f"My name is {name} and im form {country}"
+# print(letter)
+'''learnign doc string'''
+def name(n):
+  '''This is doc string i have already written before learnig any thing but we can print it if its in any function but it should be right after the string '''
+  print(n**56)
+  
+name(3)
+print(name.__doc__)
 
