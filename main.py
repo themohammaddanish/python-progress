@@ -302,4 +302,3 @@ def factorial(n):
 result=factorial(a)
 print(result)
 print(f"this is the value of your desire number factorial {result}")
-#this is recurrion
