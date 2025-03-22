@@ -299,5 +299,6 @@ def factorial(n):
     return 1
   else:
     return n * factorial(n-1)
-factorial(5)
-print(factorial)
+result=factorial(a)
+print(result)
+print(f"this is the value of your desire number factorial {result}")
