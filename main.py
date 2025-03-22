@@ -302,3 +302,17 @@ def factorial(n):
 result=factorial(a)
 print(result)
 print(f"this is the value of your desire number factorial {result}")
+
+'''fibonacci'''
+a=int(input("inter the number for factorial value"))
+
+def fibonacci(f):
+  if (f==0 ):
+    return 0
+  elif (f==1):
+    return 1
+  else:
+    return fibonacci(f-1) + fibonacci(f+1)
+result=factorial(a)
+print(result)
+print(f"this is the value of your desire number fibonacci {result}")
