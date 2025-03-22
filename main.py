@@ -298,6 +298,6 @@ def factorial(n):
     return 1
   else:
     return n * factorial(n-1)
-n=int(input("inter the number for factorial value"))
-factorial(n)
+a=int(input("inter the number for factorial value"))
+factorial(a)
 print(factorial)
