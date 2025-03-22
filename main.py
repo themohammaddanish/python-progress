@@ -275,3 +275,7 @@
 # else: 
 #   print("gooad evening sir ")
 '''Leraning f string '''
+string= "my name is {} khan and im form {}"
+name= "danish"
+country="nepal"
+print(string.format(name,country))
