@@ -255,22 +255,23 @@
 # list1.extend(list2)
 # print(list1)
 '''learning tupple now'''
-a = (2,3,4,4,4,)
-print(type(a), a)
-b = a
-# b[0]=19  tupple can not be modified
-print(b)
-b = a[1:4]
-print(b)
-if 3 in a:
-  print("yes 3 is in tupple list variable of a")
-import time
-t = int(time.strftime("%H"))
-print(t)
+# a = (2,3,4,4,4,)
+# print(type(a), a)
+# b = a
+# # b[0]=19  tupple can not be modified
+# print(b)
+# b = a[1:4]
+# print(b)
+# if 3 in a:
+#   print("yes 3 is in tupple list variable of a")
+# import time
+# t = int(time.strftime("%H"))
+# print(t)
 
-if (t>0 and t<12):
-  print("good mornign sir welcome")
-elif(t>12 and t<17):
-  print("good afternoon sir")
-else: 
-  print("gooad evening sir ")
+# if (t>0 and t<12):
+#   print("good mornign sir welcome")
+# elif(t>12 and t<17):
+#   print("good afternoon sir")
+# else: 
+#   print("gooad evening sir ")
+'''Leraning f string '''
