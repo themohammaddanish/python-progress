@@ -292,29 +292,30 @@
 # print(name.__doc__)
 
 '''Recursion The best example is factorial'''
-a=int(input("inter the number for factorial value"))
+# a=int(input("inter the number for factorial value"))
 
-def factorial(n):
-  if (n==0 or n==1):
-    return 1
-  else:
-    return n * factorial(n-1)
-result=factorial(a)
-print(result)
-print(f"this is the value of your desire number factorial {result}")
+# def factorial(n):
+#   if (n==0 or n==1):
+#     return 1
+#   else:
+#     return n * factorial(n-1)
+# result=factorial(a)
+# print(result)
+# print(f"this is the value of your desire number factorial {result}")
 
-'''fibonacci'''
-a=int(input("inter the number for factorial value"))
+# '''fibonacci'''
+# a=int(input("inter the number for factorial value"))
 
-def fibonacci(f):
-  if (f==0 ):
-    return 0
-  elif (f==1):
-    return 1
-  else:
-    return fibonacci(f-1) + fibonacci(f+1)
-result=factorial(a)
-print(result)
-print(f"this is the value of your desire number fibonacci {result}")
+# def fibonacci(f):
+#   if (f==0 ):
+#     return 0
+#   elif (f==1):
+#     return 1
+#   else:
+#     return fibonacci(f-1) + fibonacci(f+1)
+# result=factorial(a)
+# print(result)
+# print(f"this is the value of your desire number fibonacci {result}")
 
 '''Today We Will learn Set in Python'''
+
