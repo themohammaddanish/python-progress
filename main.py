@@ -318,7 +318,10 @@
 # print(f"this is the value of your desire number fibonacci {result}")
 
 '''Today We Will learn Set in Python'''
-a = {"danish", "danish", "khan"}
-print(f"this a set, set helps to store only original value it do not store duplicate value {a}")
+# a = {"danish", "danish", "khan"}
+# print(f"this a set, set helps to store only original value it do not store duplicate value {a}")
 
 '''set method'''
+s1 = {2,3,4,5,6}
+s2 = {3,6,2,7,8,9}
+print(s1.union(s2))
