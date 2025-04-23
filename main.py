@@ -320,3 +320,5 @@
 '''Today We Will learn Set in Python'''
 a = {"danish", "danish", "khan"}
 print(f"this a set, set helps to store only original value it do not store duplicate value {a}")
+
+'''set method'''
