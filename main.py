@@ -327,3 +327,7 @@ s2 = {3,6,2,7,8,9}
 print(s1.union(s2))
 s1.update(s2)
 print(s1)
+print(s1.isdisjoint(s2))
+s1.add(9)
+print(s1)
+print()
