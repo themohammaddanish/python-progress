@@ -325,3 +325,5 @@
 s1 = {2,3,4,5,6}
 s2 = {3,6,2,7,8,9}
 print(s1.union(s2))
+s1.update(s2)
+print(s1)
