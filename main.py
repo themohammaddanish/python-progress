@@ -341,3 +341,4 @@ dic = {
 }
 
 print(dic)
+print(dic.get("lcID"))
