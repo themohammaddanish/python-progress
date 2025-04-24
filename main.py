@@ -342,3 +342,6 @@ dic = {
 
 print(dic)
 print(dic.get("lcID"))
+
+for key in dic.keys():
+  print(dic[key])
