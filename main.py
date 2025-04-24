@@ -345,3 +345,4 @@ print(dic.get("lcID"))
 
 for key in dic.keys():
   print(dic[key])
+  print(f"{key} is {dic[key]}")
