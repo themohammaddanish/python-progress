@@ -333,3 +333,11 @@
 # print()
 
 '''starting dictionay in python'''
+dic = {
+  "name": "danish",
+  "age": 21,
+  "semester": 3,
+  "lcID": "lc0016001000"
+}
+
+print(dic)
