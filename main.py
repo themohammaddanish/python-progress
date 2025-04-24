@@ -322,12 +322,14 @@
 # print(f"this a set, set helps to store only original value it do not store duplicate value {a}")
 
 '''set method'''
-s1 = {2,3,4,5,6}
-s2 = {3,6,2,7,8,9}
-print(s1.union(s2))
-s1.update(s2)
-print(s1)
-print(s1.isdisjoint(s2))
-s1.add(9)
-print(s1)
-print()
+# s1 = {2,3,4,5,6}
+# s2 = {3,6,2,7,8,9}
+# print(s1.union(s2))
+# s1.update(s2)
+# print(s1)
+# print(s1.isdisjoint(s2))
+# s1.add(9)
+# print(s1)
+# print()
+
+'''starting dictionay in python'''
