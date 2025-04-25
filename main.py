@@ -348,4 +348,8 @@
 #   print(f"{key} is {dic[key]}")
 
 '''for loop with else'''
+# for i in range(5):
+#   print(i)
+# else:
+#   print("the code run succesfully ")
 
