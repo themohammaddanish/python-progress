@@ -347,4 +347,5 @@
 #   print(dic[key])
 #   print(f"{key} is {dic[key]}")
 
-'''for loop with python'''
+'''for loop with else'''
+
