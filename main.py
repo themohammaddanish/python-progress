@@ -333,16 +333,18 @@
 # print()
 
 '''starting dictionay in python'''
-dic = {
-  "name": "danish",
-  "age": 21,
-  "semester": 3,
-  "lcID": "lc0016001000"
-}
+# dic = {
+#   "name": "danish",
+#   "age": 21,
+#   "semester": 3,
+#   "lcID": "lc0016001000"
+# }
 
-print(dic)
-print(dic.get("lcID"))
+# print(dic)
+# print(dic.get("lcID"))
 
-for key in dic.keys():
-  print(dic[key])
-  print(f"{key} is {dic[key]}")
+# for key in dic.keys():
+#   print(dic[key])
+#   print(f"{key} is {dic[key]}")
+
+'''for loop with python'''
