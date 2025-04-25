@@ -353,3 +353,6 @@
 # else:
 #   print("the code run succesfully ")
 
+'''exception handeling'''
+a = input("Enter the number: ")
+Print(f"The multiplicaiton tabel of {a} is")
