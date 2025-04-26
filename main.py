@@ -365,3 +365,9 @@
 #   print("i am don i always execute")
 
 '''raising custom error'''
+a = int(input("enter the number beteen 5 and 10: "))
+
+if (a<5 or a>10):
+  raise ValueError("enter the valuse between 5 and 10")
+
+print(a+a)
