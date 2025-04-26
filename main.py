@@ -361,3 +361,5 @@ try:
   print(f"{int(a)} X {i} = {int(a)*i}")
 except:
   print("sorry i think you have enter string")
+finally:
+  print("i am don i always execute")
