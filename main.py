@@ -354,12 +354,14 @@
 #   print("the code run succesfully ")
 
 '''exception handeling'''
-a = input("Enter the number: ")
-print(f"The multiplicaiton tabel of {a} is")
-try:
- for i in range(1,11):
-  print(f"{int(a)} X {i} = {int(a)*i}")
-except:
-  print("sorry i think you have enter string")
-finally:
-  print("i am don i always execute")
+# a = input("Enter the number: ")
+# print(f"The multiplicaiton tabel of {a} is")
+# try:
+#  for i in range(1,11):
+#   print(f"{int(a)} X {i} = {int(a)*i}")
+# except:
+#   print("sorry i think you have enter string")
+# finally:
+#   print("i am don i always execute")
+
+'''raising custom error'''
