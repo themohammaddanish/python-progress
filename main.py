@@ -356,5 +356,8 @@
 '''exception handeling'''
 a = input("Enter the number: ")
 print(f"The multiplicaiton tabel of {a} is")
-for i in range(1,11):
+try:
+ for i in range(1,11):
   print(f"{int(a)} X {i} = {int(a)*i}")
+except Exception as e:
+  print("sorry i think you have enter string")
