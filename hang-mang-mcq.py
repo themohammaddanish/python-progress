@@ -2,114 +2,136 @@ import random
 import tkinter as tk
 from tkinter import messagebox
 
-def hangman_mcq():
-  questions = [
-    {
-      "question": "What is the capital of France?",
-      "options": ["A. Paris", "B. London", "C. Rome", "D. Berlin"],
-      "answer": "A"
-    },
-    {
-      "question": "Which planet is known as the Red Planet?",
-      "options": ["A. Earth", "B. Mars", "C. Jupiter", "D. Venus"],
-      "answer": "B"
-    },
-    {
-      "question": "What is 5 + 3?",
-      "options": ["A. 6", "B. 7", "C. 8", "D. 9"],
-      "answer": "C"
-    },
-    {
-      "question": "Which animal is known as the King of the Jungle?",
-      "options": ["A. Tiger", "B. Elephant", "C. Lion", "D. Giraffe"],
-      "answer": "C"
-    },
-    {
-      "question": "Which animal is known as the King of the Jungle?",
-      "options": ["A. Tiger", "B. Elephant", "C. Lion", "D. Giraffe"],
-      "answer": "C"
-    },
-    {
-      "question": "Which animal is known as the King of the Jungle?",
-      "options": ["A. Tiger", "B. Elephant", "C. Lion", "D. Giraffe"],
-      "answer": "C"
-    },
-    {
-      "question": "Which animal is known as the King of the Jungle?",
-      "options": ["A. Tiger", "B. Elephant", "C. Lion", "D. Giraffe"],
-      "answer": "C"
-    }
-  ]
-
-  random.shuffle(questions)
-  lives = 5
-  current_question_index = 0
-
-  def draw_hangman():
-    """Draw the hangman figure based on remaining lives."""
-    stages = [
-      lambda: canvas.create_line(50, 200, 150, 200, width=3),  # Base
-      lambda: canvas.create_line(100, 200, 100, 50, width=3),  # Pole
-      lambda: canvas.create_line(100, 50, 150, 50, width=3),   # Top bar
-      lambda: canvas.create_line(150, 50, 150, 80, width=3),   # Rope
-      lambda: canvas.create_oval(140, 80, 160, 100, width=3),  # Head
-      lambda: canvas.create_line(150, 100, 150, 140, width=3), # Body
-      lambda: canvas.create_line(150, 110, 130, 120, width=3), # Left arm
-      lambda: canvas.create_line(150, 110, 170, 120, width=3), # Right arm
-      lambda: canvas.create_line(150, 140, 130, 170, width=3), # Left leg
-      lambda: canvas.create_line(150, 140, 170, 170, width=3)  # Right leg
+class HangmanGame:
+  def __init__(self):
+    self.words = [
+      {"word": "elephant", "hint": "A large animal with a trunk."},
+      {"word": "giraffe", "hint": "An animal with a long neck."},
+      {"word": "tiger", "hint": "A big cat with stripes."},
+      {"word": "penguin", "hint": "A bird that cannot fly but swims."},
+      {"word": "zebra", "hint": "An animal with black and white stripes."}
     ]
-    if 5 - lives < len(stages):
-      stages[5 - lives]()
+    self.mcq_questions = [
+      {"question": "Which animal has a trunk?", "options": ["A. Elephant", "B. Tiger", "C. Giraffe", "D. Zebra"], "answer": "A"},
+      {"question": "Which animal has a long neck?", "options": ["A. Penguin", "B. Giraffe", "C. Tiger", "D. Zebra"], "answer": "B"},
+      {"question": "Which animal has stripes?", "options": ["A. Elephant", "B. Penguin", "C. Tiger", "D. Giraffe"], "answer": "C"}
+    ]
+    self.max_lives = 6
+    self.lives = self.max_lives
+    self.score = 0
+    self.current_word = None
+    self.guessed_letters = []
+    self.current_mcq_index = 0
+    self.setup_game()
 
-  def load_question():
-    nonlocal current_question_index
-    if current_question_index < len(questions):
-      question_label.config(text=questions[current_question_index]["question"])
-      for i, option in enumerate(questions[current_question_index]["options"]):
-        option_buttons[i].config(text=option, state=tk.NORMAL)
+  def setup_game(self):
+    self.root = tk.Tk()
+    self.root.title("Hangman Game for Kids")
+    self.root.geometry("600x500")
+
+    tk.Label(self.root, text="Welcome to the Hangman Game!", font=("Arial", 16)).pack(pady=10)
+    tk.Label(self.root, text="Guess the word before the hangman is complete!", font=("Arial", 12)).pack(pady=5)
+
+    self.canvas = tk.Canvas(self.root, width=300, height=250, bg="white")
+    self.canvas.pack(pady=10)
+
+    self.hint_label = tk.Label(self.root, text="", font=("Arial", 14), wraplength=400, justify="center")
+    self.hint_label.pack(pady=10)
+
+    self.word_label = tk.Label(self.root, text="", font=("Arial", 18))
+    self.word_label.pack(pady=10)
+
+    self.entry = tk.Entry(self.root, font=("Arial", 14))
+    self.entry.pack(pady=5)
+
+    self.guess_button = tk.Button(self.root, text="Guess", font=("Arial", 12), command=self.check_guess)
+    self.guess_button.pack(pady=5)
+
+    self.feedback_label = tk.Label(self.root, text="", font=("Arial", 12))
+    self.feedback_label.pack(pady=10)
+
+    self.start_new_round()
+
+    self.root.mainloop()
+
+  def start_new_round(self):
+    self.lives = self.max_lives
+    self.guessed_letters = []
+    self.current_word = random.choice(self.words)
+    self.update_word_display()
+    self.hint_label.config(text=f"Hint: {self.current_word['hint']}")
+    self.feedback_label.config(text="")
+    self.canvas.delete("all")
+
+  def update_word_display(self):
+    display_word = " ".join([letter if letter in self.guessed_letters else "_" for letter in self.current_word["word"]])
+    self.word_label.config(text=display_word)
+
+  def check_guess(self):
+    guess = self.entry.get().lower()
+    self.entry.delete(0, tk.END)
+
+    if len(guess) != 1 or not guess.isalpha():
+      self.feedback_label.config(text="Please enter a single letter.")
+      return
+
+    if guess in self.guessed_letters:
+      self.feedback_label.config(text="You already guessed that letter.")
+      return
+
+    self.guessed_letters.append(guess)
+
+    if guess in self.current_word["word"]:
+      self.feedback_label.config(text="Correct guess!")
     else:
-      messagebox.showinfo("Congratulations!", "You answered all questions correctly!")
-      root.destroy()
+      self.lives -= 1
+      self.feedback_label.config(text=f"Wrong guess! Lives remaining: {self.lives}")
+      self.draw_hangman()
 
-  def check_answer(selected_option):
-    nonlocal lives, current_question_index
-    correct_answer = questions[current_question_index]["answer"]
-    if selected_option == correct_answer:
-      messagebox.showinfo("Correct!", "Your answer is correct!")
+    self.update_word_display()
+
+    if "_" not in self.word_label.cget("text"):
+      self.score += 10
+      messagebox.showinfo("Congratulations!", "You guessed the word!")
+      self.ask_mcq()
+    elif self.lives == 0:
+      messagebox.showerror("Game Over", f"You lost! The word was '{self.current_word['word']}'.")
+      self.ask_mcq()
+
+  def draw_hangman(self):
+    stages = [
+      lambda: self.canvas.create_line(50, 200, 150, 200, width=3),  # Base
+      lambda: self.canvas.create_line(100, 200, 100, 50, width=3),  # Pole
+      lambda: self.canvas.create_line(100, 50, 150, 50, width=3),   # Top bar
+      lambda: self.canvas.create_line(150, 50, 150, 80, width=3),   # Rope
+      lambda: self.canvas.create_oval(140, 80, 160, 100, width=3),  # Head
+      lambda: self.canvas.create_line(150, 100, 150, 140, width=3)  # Body
+    ]
+    if self.max_lives - self.lives < len(stages):
+      stages[self.max_lives - self.lives]()
+
+  def ask_mcq(self):
+    if self.current_mcq_index < len(self.mcq_questions):
+      question = self.mcq_questions[self.current_mcq_index]
+      self.current_mcq_index += 1
+
+      def check_mcq_answer(selected_option):
+        if selected_option == question["answer"]:
+          self.score += 5
+          messagebox.showinfo("Correct!", "You answered correctly!")
+        else:
+          messagebox.showerror("Wrong!", f"The correct answer was {question['answer']}.")
+        self.start_new_round()
+
+      mcq_window = tk.Toplevel(self.root)
+      mcq_window.title("MCQ Question")
+      tk.Label(mcq_window, text=question["question"], font=("Arial", 14), wraplength=400).pack(pady=10)
+      for option in question["options"]:
+        tk.Button(mcq_window, text=option, font=("Arial", 12),
+              command=lambda opt=option[0]: [mcq_window.destroy(), check_mcq_answer(opt)]).pack(pady=5)
     else:
-      lives -= 1
-      draw_hangman()
-      messagebox.showerror("Wrong!", f"Wrong answer! The correct answer was {correct_answer}. You have {lives} lives remaining.")
-      if lives == 0:
-        messagebox.showerror("Game Over", "You have no lives left. Game Over!")
-        root.destroy()
-        return
-    current_question_index += 1
-    load_question()
-
-  # GUI setup
-  root = tk.Tk()
-  root.title("Hangman MCQ Game")
-  root.geometry("600x500")
-
-  tk.Label(root, text="Welcome to the Hangman MCQ Game!", font=("Arial", 16)).pack(pady=10)
-  tk.Label(root, text="Answer the questions correctly to avoid the hangman!", font=("Arial", 12)).pack(pady=5)
-
-  canvas = tk.Canvas(root, width=300, height=250, bg="white")
-  canvas.pack(pady=10)
-
-  question_label = tk.Label(root, text="", font=("Arial", 14), wraplength=400, justify="center")
-  question_label.pack(pady=20)
-
-  option_buttons = []
-  for i in range(4):
-    btn = tk.Button(root, text="", font=("Arial", 12), width=20, command=lambda i=i: check_answer(questions[current_question_index]["options"][i][0]))
-    btn.pack(pady=5)
-    option_buttons.append(btn)
-
-  load_question()
-  root.mainloop()
+      messagebox.showinfo("Game Complete", f"Your final score is: {self.score}")
+      self.root.destroy()
 
 if __name__ == "__main__":
-  hangman_mcq()
+  HangmanGame()
