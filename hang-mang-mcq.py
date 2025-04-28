@@ -23,6 +23,21 @@ def hangman_mcq():
       "question": "Which animal is known as the King of the Jungle?",
       "options": ["A. Tiger", "B. Elephant", "C. Lion", "D. Giraffe"],
       "answer": "C"
+    },
+    {
+      "question": "Which animal is known as the King of the Jungle?",
+      "options": ["A. Tiger", "B. Elephant", "C. Lion", "D. Giraffe"],
+      "answer": "C"
+    },
+    {
+      "question": "Which animal is known as the King of the Jungle?",
+      "options": ["A. Tiger", "B. Elephant", "C. Lion", "D. Giraffe"],
+      "answer": "C"
+    },
+    {
+      "question": "Which animal is known as the King of the Jungle?",
+      "options": ["A. Tiger", "B. Elephant", "C. Lion", "D. Giraffe"],
+      "answer": "C"
     }
   ]
 
