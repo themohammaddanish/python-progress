@@ -372,5 +372,5 @@
 
 # print(a+a)
 
-
+'''short hand if else'''
 
