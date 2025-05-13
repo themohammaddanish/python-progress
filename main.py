@@ -373,5 +373,5 @@
 # print(a+a)
 
 '''short hand if else'''
-a= int(input("enter the number"))
-print(a) if a > 15 else print("enter big number")
+# a= int(input("enter the number"))
+# print(a) if a > 15 else print("enter big number")
