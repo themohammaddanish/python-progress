@@ -385,3 +385,5 @@ for index, i in enumerate(a):
     print("thats great")
     
 '''virtual enviroment'''
+
+'''how import works in python'''
