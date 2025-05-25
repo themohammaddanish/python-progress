@@ -388,7 +388,12 @@
 
 '''how import works in python'''
 
-import math
+# import math
 
-a = math.factorial(4)
+# a = math.factorial(4)
+# print(a)
+
+from math import sqrt
+
+a = sqrt(5)
 print(a)
