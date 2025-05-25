@@ -377,13 +377,18 @@
 # print(a) if a > 15 else print("enter big number")
 
 '''enumurate function'''
-a = [2,5,6,8,8,9]
+# a = [2,5,6,8,8,9]
 
-for index, i in enumerate(a):
-  print(i)
-  if (index == 3):
-    print("thats great")
+# for index, i in enumerate(a):
+#   print(i)
+#   if (index == 3):
+#     print("thats great")
     
 '''virtual enviroment'''
 
 '''how import works in python'''
+
+import math
+
+a = math.factorial(4)
+print(a)
