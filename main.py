@@ -377,4 +377,9 @@
 # print(a) if a > 15 else print("enter big number")
 
 '''enumurate function'''
+a = [2,5,6,8,8,9]
 
+for index, i in enumerate(a):
+  print(i)
+  if (index == 3):
+    print("thats great")
