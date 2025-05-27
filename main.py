@@ -399,5 +399,7 @@
 # print(a)
 
 '''if name = main '''
-import danish
+# import danish
+# danish.welcome()
 
+'''os module '''
