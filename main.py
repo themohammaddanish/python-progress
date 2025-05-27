@@ -400,4 +400,4 @@
 
 '''if name = main '''
 import danish
-danish.welcome()
+
