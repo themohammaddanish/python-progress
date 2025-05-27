@@ -403,3 +403,5 @@
 # danish.welcome()
 
 '''os module '''
+import os
+os.mkdir("data")
