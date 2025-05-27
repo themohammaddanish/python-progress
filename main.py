@@ -393,7 +393,10 @@
 # a = math.factorial(4)
 # print(a)
 
-from math import sqrt
+# from math import sqrt
 
-a = sqrt(5)
-print(a)
+# a = sqrt(5)
+# print(a)
+
+'''if name = main '''
+
